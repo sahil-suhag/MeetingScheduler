@@ -4,35 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <LinearLayout
+
+
+
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Prev"
-            android:id="@+id/prev"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/date"
-            android:gravity="center"/>
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:id="@+id/next"
-            android:text="next"/>
-    </LinearLayout>
-
-
-
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:id="@+id/pager"
+        android:id="@+id/fragment"
         android:layout_height="wrap_content"/>
 
 

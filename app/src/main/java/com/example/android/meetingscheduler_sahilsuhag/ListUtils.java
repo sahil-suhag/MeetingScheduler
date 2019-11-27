@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ListUtils {
 
@@ -108,6 +109,9 @@ public class ListUtils {
             for(int i =0 ; i<root.length();i++){
                 JSONObject meet = root.optJSONObject(i);
                 String startTime = meet.optString("start_time");
+                if(startTime.length()!=5){
+                    startTime ="0"+startTime;
+                }
                 String endTime = meet.optString("end_time");
                 String desc = meet.optString("description");
                 JSONArray attendees = meet.optJSONArray("participants");
@@ -123,6 +127,7 @@ public class ListUtils {
         catch(JSONException e){
             e.printStackTrace();
         }
+        Collections.sort(listToReturn);
         return listToReturn;
     }
 

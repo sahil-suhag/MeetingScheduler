@@ -10,6 +10,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MeetingAdapter extends ArrayAdapter<Meeting> {
 
@@ -28,7 +29,14 @@ public class MeetingAdapter extends ArrayAdapter<Meeting> {
         }
 
         TextView timeTv= v.findViewById(R.id.time);
-        timeTv.setText(meeting.getStartTime()+" - "+meeting.getEndTime());
+        String starttime = meeting.getStartTime();
+        if (starttime.toCharArray()[0]=='0'){
+            char[] temp;
+            temp= Arrays.copyOfRange(starttime.toCharArray(),1,starttime.length());
+            starttime=String.valueOf(temp);
+
+        }
+        timeTv.setText(starttime+" - "+meeting.getEndTime());
 
         TextView descTv = v.findViewById(R.id.agenda);
         descTv.setText(meeting.getDescription());

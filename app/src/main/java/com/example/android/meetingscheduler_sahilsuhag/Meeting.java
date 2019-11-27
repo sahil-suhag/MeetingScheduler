@@ -2,7 +2,7 @@ package com.example.android.meetingscheduler_sahilsuhag;
 
 import java.util.ArrayList;
 
-public class Meeting {
+public class Meeting implements Comparable<Meeting>{
 
 
     private String description="";
@@ -37,5 +37,9 @@ public class Meeting {
         }
         return att.toString();
 
+    }
+
+    public int compareTo(Meeting o){
+            return startTime.compareTo(o.startTime);
     }
 }

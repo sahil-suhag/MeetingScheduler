@@ -1,7 +1,8 @@
 <LinearLayout android:layout_height="wrap_content"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
         android:layout_width="match_parent"
